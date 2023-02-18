@@ -1,4 +1,4 @@
-# The Odin Project | Restaurant Project
+# The Odin Project | Restaurant Page
 
 What I Learn :
 
