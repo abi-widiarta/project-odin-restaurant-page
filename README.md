@@ -12,5 +12,6 @@ Notes for this project :
 
 - Not responsive yet
 - Can be improved by adding animation on tab changes
+- Somehow I can't make webpack image minimizer plugins works
 
-Demo Link :
+Demo Link : https://project-odin-restaurant-page.vercel.app/
