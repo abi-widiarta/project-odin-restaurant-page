@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  background-image: url("./background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+#content {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 80px 1fr 40px;
+  /* background-color: salmon; */
+}
+
+.navbar {
+  /* background-color: darkslategray; */
+  display: grid;
+  place-items: center;
+  border-bottom: 3px solid #fff;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar ul li::after {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 250ms;
+  transform-origin: right;
+}
+
+.navbar ul li:hover::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 250ms;
+  transform-origin: left;
+}
+
+/* main home */
+/* .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.75rem;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+} */
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+}
+
+.hero-btn {
+  padding: 1rem 4rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #93ffa4;
+  cursor: pointer;
+  transition: all 250ms;
+  border: 2px solid transparent;
+}
+
+.hero-btn:hover {
+  background: transparent;
+  border: 2px solid #93ffa4;
+  transition: all 250ms;
+  color: #fff;
+}
+
+.footer {
+  text-align: center;
+  line-height: 40px;
+}
+
+/* MENU */
+
+/* main menu */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.75rem;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+}
+
+.menu-title {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+/* CONTACT */
+
+/* main contact */
+/* .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 3px solid #fff;
+  row-gap: 3rem;
+} */
+
+.contact-title {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.form {
+  width: 480px;
+}
+
+input {
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  margin-top: 0.5rem;
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.contact-btn {
+  display: block;
+  padding: 0.75rem 2rem;
+  margin: 0 auto;
+  background-color: #93ffa4;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  cursor: pointer;
+}
