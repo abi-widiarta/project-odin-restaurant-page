@@ -12,11 +12,7 @@ main.classList.add("main");
 mainTitle.className = "menu-title";
 mainTitle.textContent = "MENU";
 
-function createLi(content) {
-  const li = document.createElement("li");
-  li.textContent = `${content}`;
-  return li;
-}
+menus.className = "menus";
 
 function createMenuCard(title, desc, price) {
   const menuCard = document.createElement("div");
@@ -44,19 +40,13 @@ footer.classList.add("footer");
 footer.appendChild(footerParagraph);
 footerParagraph.textContent = "Copyright 2023 - Odin Caffe & Eatery";
 
-export function appendMenu(contentContainer) {
-  contentContainer.appendChild(navbar);
-  navbar.appendChild(ul);
-  ul.appendChild(createLi("HOME"));
-  ul.appendChild(createLi("MENU"));
-  ul.appendChild(createLi("CONTACT"));
+menus.appendChild(createMenuCard("Odin Salad", "Combination of fresh vegetables and delicious fruits", "12$"));
+menus.appendChild(createMenuCard("Odin Pizza", "Pizza with delicious topping and rich flavors", "16$"));
+menus.appendChild(createMenuCard("Odin Burger", "Burger with extra thick patty and delicious bun", "10$"));
+menus.appendChild(createMenuCard("Odin Coffee", "Fresh homemade coffee with high quality beans", "8$"));
+main.appendChild(mainTitle);
+main.appendChild(menus);
 
+export function appendMenu(contentContainer) {
   contentContainer.appendChild(main);
-  main.appendChild(mainTitle);
-  menus.appendChild(createMenuCard("Odin Salad", "Combination of fresh vegetables and delicious fruits", "12$"));
-  menus.appendChild(createMenuCard("Odin Pizza", "Pizza with delicious topping and rich flavors", "16$"));
-  menus.appendChild(createMenuCard("Odin Burger", "Burger with extra thick patty and delicious bun", "10$"));
-  menus.appendChild(createMenuCard("Odin Coffee", "Fresh homemade coffee with high quality beans", "8$"));
-  main.appendChild(menus);
-  contentContainer.appendChild(footer);
 }

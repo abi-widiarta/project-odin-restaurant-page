@@ -1,0 +1,52 @@
+// Element Creation
+const main = document.createElement("main");
+const mainTitle = document.createElement("h1");
+const form = document.createElement("form");
+const textArea = document.createElement("textarea");
+const button = document.createElement("button");
+
+function createInputContainer(inputType, inputTitle) {
+  const inputContainer = document.createElement("div");
+  const label = document.createElement("label");
+  const input = document.createElement("input");
+
+  label.setAttribute("for", inputTitle);
+  label.textContent = inputTitle.charAt(0).toUpperCase() + inputTitle.slice(1);
+
+  input.setAttribute("type", inputType);
+  input.setAttribute("name", inputTitle);
+  input.setAttribute("id", inputTitle);
+
+  inputContainer.append(label, input);
+  return inputContainer;
+}
+
+main.className = "main";
+mainTitle.className = "contact-title";
+mainTitle.textContent = "CONTACT US";
+main.append(mainTitle, form);
+form.className = "form";
+form.appendChild(createInputContainer("text", "name"));
+form.appendChild(createInputContainer("email", "Email"));
+form.setAttribute("autocomplete", "off");
+
+textArea.setAttribute("rows", "8");
+textArea.setAttribute("name", "message");
+textArea.setAttribute("id", "message");
+textArea.className = "textarea";
+
+const messageContainer = document.createElement("div");
+const messageLabel = document.createElement("label");
+messageLabel.setAttribute("for", "message");
+messageLabel.textContent = "Message";
+messageContainer.append(messageLabel, textArea);
+
+button.className = "contact-btn";
+button.setAttribute("type", "submit");
+button.textContent = "SEND";
+
+form.append(messageContainer, button);
+
+export function appendContact(contentContainer) {
+  contentContainer.appendChild(main);
+}
