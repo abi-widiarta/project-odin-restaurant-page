@@ -12,19 +12,18 @@ const ul = document.createElement("ul");
 const footer = document.createElement("footer");
 const footerParagraph = document.createElement("p");
 
-function changeTab(li) {
-  console.log(li.textContent);
-  if (li.textContent == "HOME") {
+function changeTab(liTextContent) {
+  if (liTextContent == "HOME") {
     contentContainer.innerHTML = "";
     contentContainer.appendChild(navbar);
-    appendHome(contentContainer);
+    appendHome(contentContainer, changeTab);
     contentContainer.appendChild(footer);
-  } else if (li.textContent == "MENU") {
+  } else if (liTextContent == "MENU") {
     contentContainer.innerHTML = "";
     contentContainer.appendChild(navbar);
     appendMenu(contentContainer);
     contentContainer.appendChild(footer);
-  } else if (li.textContent == "CONTACT") {
+  } else if (liTextContent == "CONTACT") {
     contentContainer.innerHTML = "";
     contentContainer.appendChild(navbar);
     appendContact(contentContainer);
@@ -35,7 +34,7 @@ function changeTab(li) {
 function createLi(content) {
   const li = document.createElement("li");
   li.textContent = `${content}`;
-  li.addEventListener("click", () => changeTab(li));
+  li.addEventListener("click", () => changeTab(content));
   return li;
 }
 
@@ -53,7 +52,7 @@ contentContainer.appendChild(navbar);
 
 // appendHome(contentContainer);
 // appendMenu(contentContainer);
-appendHome(contentContainer);
+appendHome(contentContainer, changeTab);
 // document.body.appendChild(appendHome);
 
 contentContainer.appendChild(footer);

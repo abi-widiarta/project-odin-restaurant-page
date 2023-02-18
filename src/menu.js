@@ -1,17 +1,12 @@
 // Element Creation
-const navbar = document.createElement("navbar");
-const ul = document.createElement("ul");
-
 const main = document.createElement("main");
 const mainTitle = document.createElement("h1");
 const menus = document.createElement("div");
 
-navbar.classList.add("navbar");
-
-main.classList.add("main");
+// Set Element Attribute and InnerHTML
+main.classList.add("main-menu");
 mainTitle.className = "menu-title";
 mainTitle.textContent = "MENU";
-
 menus.className = "menus";
 
 function createMenuCard(title, desc, price) {
@@ -33,13 +28,7 @@ function createMenuCard(title, desc, price) {
   return menuCard;
 }
 
-const footer = document.createElement("footer");
-const footerParagraph = document.createElement("p");
-
-footer.classList.add("footer");
-footer.appendChild(footerParagraph);
-footerParagraph.textContent = "Copyright 2023 - Odin Caffe & Eatery";
-
+// Append Element
 menus.appendChild(createMenuCard("Odin Salad", "Combination of fresh vegetables and delicious fruits", "12$"));
 menus.appendChild(createMenuCard("Odin Pizza", "Pizza with delicious topping and rich flavors", "16$"));
 menus.appendChild(createMenuCard("Odin Burger", "Burger with extra thick patty and delicious bun", "10$"));
@@ -47,6 +36,7 @@ menus.appendChild(createMenuCard("Odin Coffee", "Fresh homemade coffee with high
 main.appendChild(mainTitle);
 main.appendChild(menus);
 
+// Append to contentContainer
 export function appendMenu(contentContainer) {
   contentContainer.appendChild(main);
 }

@@ -5,6 +5,7 @@ const form = document.createElement("form");
 const textArea = document.createElement("textarea");
 const button = document.createElement("button");
 
+// Function to createInputContainer according to some params
 function createInputContainer(inputType, inputTitle) {
   const inputContainer = document.createElement("div");
   const label = document.createElement("label");
@@ -21,13 +22,12 @@ function createInputContainer(inputType, inputTitle) {
   return inputContainer;
 }
 
-main.className = "main";
+// Set Element Attribute and InnerHTML
+main.className = "main-contact";
 mainTitle.className = "contact-title";
 mainTitle.textContent = "CONTACT US";
-main.append(mainTitle, form);
+
 form.className = "form";
-form.appendChild(createInputContainer("text", "name"));
-form.appendChild(createInputContainer("email", "Email"));
 form.setAttribute("autocomplete", "off");
 
 textArea.setAttribute("rows", "8");
@@ -39,14 +39,19 @@ const messageContainer = document.createElement("div");
 const messageLabel = document.createElement("label");
 messageLabel.setAttribute("for", "message");
 messageLabel.textContent = "Message";
-messageContainer.append(messageLabel, textArea);
 
 button.className = "contact-btn";
 button.setAttribute("type", "submit");
 button.textContent = "SEND";
 
+// Append Element
+main.append(mainTitle, form);
+messageContainer.append(messageLabel, textArea);
+form.appendChild(createInputContainer("text", "name"));
+form.appendChild(createInputContainer("email", "Email"));
 form.append(messageContainer, button);
 
+// Append to contentContainer
 export function appendContact(contentContainer) {
   contentContainer.appendChild(main);
 }
